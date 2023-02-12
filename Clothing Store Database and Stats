@@ -1,0 +1,35 @@
+--Create a clothing store database
+
+CREATE TABLE store
+(id INTEGER PRIMARY KEY, name TEXT, price INTEGER, aisle INTEGER, quantity INTEGER);
+
+INSERT INTO store VALUES
+(1, "blouse", 14.99, 3, 10),
+(2, "jeans", 39.99, 4, 15),
+(3, "tshirt", 10, 3, 20), 
+(4, "coat", 49.95, 2, 13),
+(5, "boots", 34.95, 1, 8),
+(6, "vest", 19.50, 2, 9),
+(7, "shorts", 16.99, 4, 12), 
+(8, "sweatpants", 12, 2, 18), 
+(9, "sweatshirt", 12, 2, 18), 
+(10, "tights", 8.99, 1, 14), 
+(11, "skirt", 19.99, 4, 11), 
+(12, "sweater", 14.95, 2, 14), 
+(13, "socks", 5, 1, 20), 
+(14, "dress", 35.99, 5, 35), 
+(15, "apron", 11.99, 1, 20);
+
+
+--display the database ordered by price.
+SELECT * FROM store
+ORDER BY price asc;
+
+--which 5 items have the highest stock?
+SELECT * FROM store
+ORDER BY quantity desc
+limit 5;
+
+--what is the average price of items in aisle 2?
+SELECT AVG(price) "avg price aisle 2" FROM store
+where "aisle"=2; 
